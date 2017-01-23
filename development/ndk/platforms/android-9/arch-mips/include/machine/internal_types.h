@@ -1,0 +1,5 @@
+#ifndef _MIPS64_INTERNAL_TYPES_H_
+#define _MIPS64_INTERNAL_TYPES_H_
+
+
+#endif

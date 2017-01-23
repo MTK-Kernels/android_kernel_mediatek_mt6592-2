@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "leak.h"
+#include "../memcheck.h"
+
+int main()
+{
+	DECLARE_LEAK_COUNTERS;
+
+	register char *foo;
+
+        GET_INITIAL_LEAK_COUNTS;
+
+	foo = malloc(0);
+
+	GET_FINAL_LEAK_COUNTS;
+
+	PRINT_LEAK_COUNTS(stderr);
+
+	free(foo);
+	return 0;
+}
